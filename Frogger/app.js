@@ -15,8 +15,9 @@ const logsright = document.querySelectorAll(".log-right")
 const carsLeft = document.querySelectorAll('.car-left')
 const carsRight = document.querySelectorAll(".car-right")
 
-let currentIndex = 76
+let currentIndex = 85
 const rowWidth = 9
+const rowNum = 10
 let timerId
 let currentTime = 20
 let outcomeTimerId
@@ -28,8 +29,8 @@ let wasMessageShown = false
 function moveFrog(e){
   if(isPause === false){
     squares[currentIndex].classList.remove('frog-position')
-    squares[currentIndex].innerHTML=''
-
+    /*squares[currentIndex].innerHTML=''*/
+    console.log(currentIndex)
     switch(e.key){
       case "ArrowLeft":
         if(currentIndex % rowWidth !==0) currentIndex--
@@ -41,11 +42,11 @@ function moveFrog(e){
         if(currentIndex - rowWidth >=0)currentIndex-=rowWidth
       break
       case "ArrowDown":
-        if(currentIndex + rowWidth < rowWidth*rowWidth)currentIndex+=rowWidth
+        if(currentIndex + rowWidth <= rowWidth*rowNum)currentIndex+=rowWidth
       break
   }
   squares[currentIndex].classList.add('frog-position')
-  squares[currentIndex].innerHTML = '<div class="frog"></div>'
+  /*squares[currentIndex].innerHTML = '<div class="frog"></div>'*/
   }
 }
 
@@ -268,9 +269,7 @@ restartButton.addEventListener(
       timeLeftDisplay.textContent = currentTime
 
       squares[currentIndex].classList.remove('frog-position')
-      squares[currentIndex].innerHTML = ''
-      currentIndex = 76
-      squares[currentIndex].innerHTML = '<div class="frog"></div>'
+      currentIndex = 85
       squares[currentIndex].classList.add('frog-position')
       
       startButton.classList.remove('unavailable-btn')

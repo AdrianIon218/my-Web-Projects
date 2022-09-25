@@ -187,7 +187,7 @@ body{
   border: 15px double rgb(29, 224, 110);
   background-color: rgba(83, 175, 250, 0.75);
   border-radius: 20px;
-  height: 54vh;
+  height: 60vh;
   width: 36vw;
   display: flex;
   flex-wrap: wrap;
@@ -205,6 +205,12 @@ body{
   background-color: lightblue;
 } 
 
+.l1.frog-position, .l2.frog-position, .l3.frog-position{
+  background-image: url('images/frog.png'), url('images/wood.png');
+  background-size: 100% 100%;
+  background-color: lightblue;
+}
+
 .l4, .l5{
   background-color: lightblue;
 }
@@ -221,11 +227,29 @@ body{
   background-color: gray;
 }
 
+.car-left.c1.frog-position{
+  background-image: url('images/left-car.png'), url('images/frog.png');
+  background-size: 100% 100%;
+  background-color: gray;
+}
+
+.car-right.c1.frog-position{
+  background-image: url('images/right-car.png'), url('images/frog.png');
+  background-size: 100% 100%;
+  background-color: gray;
+}
+
 .c2, .c3, .cx{
   background-color: gray;
 }
 
-.frog{
+.cx{
+  font-weight: 600;
+  font-size: 24px;
+  color: white;
+}
+
+.frog-position{
   background-image: url('images/frog.png');
   background-size: 100% 100%;
 }
@@ -235,7 +259,17 @@ body{
   background-size: 100% 100%;
 }
 
+.ending-block.frog-position{
+  background-image: url('images/frog.png'), url('images/lily_flower.png');
+  background-size: 100% 100%;
+}
+
 .starting-block{
   background-image: url('images/water_lily.png');
+  background-size: 100% 100%;
+}
+
+.starting-block.frog-position{
+  background-image: url('images/frog.png'), url('images/water_lily.png');
   background-size: 100% 100%;
 }
