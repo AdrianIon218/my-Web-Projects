@@ -1,0 +1,177 @@
+:root{
+  --button-border-width: 10px;
+  --dark-blue: rgb(19, 63, 195);
+}
+
+body{
+  height: 98vh;
+  width: 98vw;
+  background-image: url("images/background-memorygame.jpg");
+  background-size: 100% 100%;
+  background-color: aliceblue;
+}
+
+.menu-up{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position:absolute;
+  top: 2vh;
+  right: 5vw;
+  left: 5vw;
+  height: 12vh;
+}
+
+.menu-btn{
+  color:rgb(9, 98, 136);
+  border: var(--button-border-width) double rgb(9, 98, 136);
+  border-radius: 20px;
+  background-color:rgb(138, 236, 203);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  cursor: pointer;
+  transition: border-style 0.8s, opacity 0.8s, border-color 0.8s, border-radius 0.8s, color 0.8s;
+}
+
+.menu-btn:hover{
+  border-style: solid;
+  opacity: 0.9;
+  border-radius: 25px;
+}
+
+.menu-btn:active{
+  border-style: double;
+  border-color: var(--dark-blue);
+  color: var(--dark-blue);
+  opacity:0.93;
+  border-radius: 15px;
+}
+
+.menu-btn-no-action{
+  cursor: auto !important;
+  border-style: double !important;
+  border-color: rgb(9, 98, 136) !important;
+  color:rgb(9, 98, 136) !important;
+  opacity:1 !important;
+  border-radius: 20px !important;
+}
+
+.final-message{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 20vh;
+  left: 40vw;
+  width: 20vw;
+  height: 26vh;
+  border: 10px double rgb(250, 224, 79);
+  background-color: rgba(218, 165, 32,0.8);
+  padding-top: 10px;
+}
+
+.final-message p{
+  color: aliceblue;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 26px;
+  text-align: center;
+}
+
+.close-message{
+  position: absolute;
+  top: -3.5vh;
+  right: -2.0vw;
+  border: solid;
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
+  color:aliceblue;
+  text-align: center;
+  padding:0px;
+  font-weight: 800;
+  border-color:  rgb(250, 224, 79);
+  background-color: rgba(218, 165, 32,0.8);
+  transition: background-color 0.5s,  border-color 0.5s;
+}
+
+.close-message:hover{
+  background-color:red;
+  border-color: aliceblue;
+  cursor: pointer;
+}
+
+.discovered-message{
+  display: block;
+}
+
+.emoji{
+  font-size: 50px;
+}
+
+.board{
+  background-color: rgba(5, 173, 225,0.9);
+  border: 15px double rgba(5, 127, 164, 0.7);
+  position: fixed;
+  top: 15vh;
+  right: 1vw;
+  left: 1vw;
+  bottom: 0vh;
+}
+
+.board-score{
+  position: absolute;
+  font-family: cursive;
+  font-weight: 700;
+  font-size: 25px;
+  color: rgb(9, 98, 136);
+  margin-left: 2vw;
+}
+
+.grid {
+  position: absolute;
+  top: 10vh;
+  right: 10vw;
+  bottom: 3vh;
+  left: 10vw;
+  padding-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  column-gap: 1vw;
+  row-gap: 1vh;
+}
+
+.card{
+  margin:0px;
+  height: 20vh;
+  width: 10vw;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-radius: 20px;
+  cursor: pointer;
+  transform: box-shadow 0.5s, border-radius 0.5s;
+}
+
+.card:hover{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  border-radius: 26px;
+}
+
+
+.card-hidden{
+  opacity:0;
+  cursor: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .grid{
+    left: 1vw;
+    right: 1vw;
+  }
+
+  .card{
+    width: 15vw;
+  }
+}

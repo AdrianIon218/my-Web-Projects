@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My projects</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="board">
+    <h2>My web projects </h2>
+    <div class="grid">
+      <div class="container" onclick="changePage('../Rock-Paper-Scissors/index.html')">
+        <img class="container-image" src="images/paper.png" alt="rock paper scissors">
+        <p class="container-title">Rock Paper Scissors</p>
+      </div>
+  
+      <div class="container" onclick="changePage('../Memorygame/index.html')">
+        <img class="container-image" src="images/blank.png" alt="Memory game">
+        <p class="container-title">Memory game</p>
+      </div>
+  
+      <div class="container" onclick="changePage('../Frogger/index.html')">
+        <img class="container-image" src="images/lily_flower.png" alt="Frogger game">
+        <p class="container-title">Frogger game</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

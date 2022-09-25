@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory game</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav class="menu-up">
+    <div></div>
+    <!--
+    <button class="menu-btn" onclick="changePage('')">Go to CV</button>
+    -->
+    <button class="menu-btn" onclick="playAgain()">Restart</button>
+    <button class="menu-btn" onclick="changePage('../MainPage/index.html')">Projects</button>
+  </nav>
+
+  <div class="final-message">
+    <p>
+      You won ! <br><span class="emoji">&#128512;</span>
+    </p>
+    <button class="close-message" onclick="closeMessage()">x</button>
+  </div>
+
+  <div class="board">
+    <p class="board-score"> Score : <span id="score">0</span> </p>
+    <div class="grid"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
