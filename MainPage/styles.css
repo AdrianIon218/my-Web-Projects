@@ -28,6 +28,10 @@ body{
   padding-right: 3vw;
   animation: go-down 1.4s ease-in 0s 1;
   animation-fill-mode: forwards;
+  -webkit-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -ms-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -moz-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -o-animation: go-down 1.4s ease-in 0s 1 normal forwards;
 }
 
 .board h2{
@@ -47,6 +51,10 @@ body{
   opacity:0%;
   animation: fade-in 1s ease-in-out 1.7s 1;
   animation-fill-mode: forwards;
+  -webkit-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -ms-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -moz-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -o-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
 }
 
 .container{
