@@ -26,12 +26,27 @@ body{
   padding-bottom: 3vh;
   padding-left: 3vw;
   padding-right: 3vw;
+  animation: go-down 2s ease-in 0s 1;
+  animation-fill-mode: forwards;
+}
+
+.board h2{
+  font-family: var(--font-family);
+  font-weight: 900;
+  color: var(--dark-blue-color);
 }
 
 .grid{
   display:flex;
   flex-wrap: wrap;
   gap: 5vw;
+}
+
+.board h2, 
+.grid{
+  opacity:0%;
+  animation: fade-in 1s ease-in-out 2.3s 1;
+  animation-fill-mode: forwards;
 }
 
 .container{
@@ -66,18 +81,22 @@ body{
   object-fit: fill;
 }
 
-.board h2{
-  font-family: var(--font-family);
-  font-weight: 900;
-  color: var(--dark-blue-color);
-}
-
 .container-title{
   font-family: var(--font-family);
   font-size: 20px;
   font-weight: 800;
   color: var(--dark-blue-color);
   text-align: center;
+}
+
+@keyframes fade-in{
+  from{opacity: 0%;}
+  to{opacity: 100%;}
+}
+
+@keyframes go-down{
+  from{bottom:98vh;}
+  to{bottom:2vh;}
 }
 
 @media screen and (max-width: 800px) {
