@@ -77,14 +77,21 @@ function createBoard(){
 function flipCard(){
   if(cardChosenNames.length < 2){
     let cardId =  this.getAttribute("data-id")
+
+    this.classList.remove('show-card-contain-part1')
+    this.classList.remove('show-card-contain-part2')
     this.classList.remove('turn-card-back-part1')
     this.classList.remove('turn-card-back-part2')
+
     cardChosenNames.push(cardArray[cardId].name)
     cardsChosenIds.push(cardId)
-    this.setAttribute('src',cardArray[cardId].img)
-    this.classList.add('show-card-contain')
+    
     if(cardChosenNames.length === 2){
-      setTimeout(checkMatch, 600);
+      setTimeout(checkMatch, 300);
+    }
+    else
+    {
+      turnCardFace(this, cardArray[cardId].img)
     }
   }
 }
@@ -93,24 +100,38 @@ function checkMatch(){
   const cards = document.querySelectorAll('.grid img')
   const option1Id = cardsChosenIds[0]
   const option2Id = cardsChosenIds[1]
-  cards[option1Id].classList.remove('show-card-contain')
-  cards[option2Id].classList.remove('show-card-contain')
+  cards[option1Id].classList.remove('show-card-contain-part1')
+  cards[option1Id].classList.remove('show-card-contain-part2')
 
   if(option1Id === option2Id){
     // You clicked the same image
     turnCardBack(cards[option1Id])
   }
-  else if(cardChosenNames[0] == cardChosenNames[1]){
-    // You found a match !
-    cards[option1Id].classList.add('card-hidden')
-    cards[option2Id].classList.add('card-hidden')
-    cards[option1Id].removeEventListener('click',flipCard)
-    cards[option2Id].removeEventListener('click',flipCard)
-    scoreCounter++
-  }
-  else{
-    turnCardBack(cards[option1Id])
-    turnCardBack(cards[option2Id])
+  else
+  {
+    turnCardFace(cards[option2Id], cardArray[option2Id].img)
+    if(cardChosenNames[0] == cardChosenNames[1]){
+      scoreCounter++
+      // You found a match !
+      setTimeout(()=>{
+        cards[option1Id].classList.add('card-hidden')
+        cards[option2Id].classList.add('card-hidden')
+        cards[option1Id].removeEventListener('click',flipCard)
+        cards[option2Id].removeEventListener('click',flipCard)
+      },550);
+    }
+    else{
+      setTimeout(()=>{
+        turnCardBack(cards[option1Id])
+        turnCardBack(cards[option2Id])
+      },500); 
+    }
+    
+    setTimeout(() => {
+      cards[option2Id].classList.remove('show-card-contain-part1')
+      cards[option2Id].classList.remove('show-card-contain-part2')
+    }, 400);
+    
   }
 
   scoreDisplay.textContent = scoreCounter
@@ -121,6 +142,14 @@ function checkMatch(){
 
   cardChosenNames = []
   cardsChosenIds = []
+}
+
+function turnCardFace(card,image_path){
+  card.classList.add('show-card-contain-part1');
+  card.addEventListener("animationend", () => {
+    card.setAttribute('src', image_path);
+    card.classList.add('show-card-contain-part2');
+  },{once : true});
 }
 
 function turnCardBack(card){
