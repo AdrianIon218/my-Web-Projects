@@ -124,6 +124,8 @@ function checkMatch(){
 
 function playAgain(){
   if(!messageDisplay.classList.contains('discovered-message')){
+    cardChosenNames = []
+    cardsChosenIds = []
     scoreDisplay.textContent = scoreCounter = 0
     const cards = document.querySelectorAll('.grid img')
     cards.forEach(card => {
