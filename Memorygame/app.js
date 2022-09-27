@@ -82,7 +82,7 @@ function flipCard(){
     this.setAttribute('src',cardArray[cardId].img)
     this.classList.add('show-card-contain')
     if(cardChosenNames.length === 2){
-      setTimeout(checkMatch, 400);
+      setTimeout(checkMatch, 600);
     }
   }
 }
