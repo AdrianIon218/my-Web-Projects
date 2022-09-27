@@ -77,6 +77,8 @@ function createBoard(){
 function flipCard(){
   if(cardChosenNames.length < 2){
     let cardId =  this.getAttribute("data-id")
+    this.classList.remove('turn-card-back-part1')
+    this.classList.remove('turn-card-back-part2')
     cardChosenNames.push(cardArray[cardId].name)
     cardsChosenIds.push(cardId)
     this.setAttribute('src',cardArray[cardId].img)
@@ -96,20 +98,19 @@ function checkMatch(){
 
   if(option1Id === option2Id){
     // You clicked the same image
-    cards[option1Id].setAttribute('src','images/blank.png')
-    cards[option1Id].classList.add('show-card-contain')
+    turnCardBack(cards[option1Id])
   }
   else if(cardChosenNames[0] == cardChosenNames[1]){
     // You found a match !
-    cards[cardsChosenIds[0]].classList.add('card-hidden')
-    cards[cardsChosenIds[1]].classList.add('card-hidden')
-    cards[cardsChosenIds[0]].removeEventListener('click',flipCard)
-    cards[cardsChosenIds[1]].removeEventListener('click',flipCard)
+    cards[option1Id].classList.add('card-hidden')
+    cards[option2Id].classList.add('card-hidden')
+    cards[option1Id].removeEventListener('click',flipCard)
+    cards[option2Id].removeEventListener('click',flipCard)
     scoreCounter++
   }
   else{
-    cards[option1Id].setAttribute('src','images/blank.png')
-    cards[option2Id].setAttribute('src','images/blank.png')
+    turnCardBack(cards[option1Id])
+    turnCardBack(cards[option2Id])
   }
 
   scoreDisplay.textContent = scoreCounter
@@ -120,6 +121,14 @@ function checkMatch(){
 
   cardChosenNames = []
   cardsChosenIds = []
+}
+
+function turnCardBack(card){
+  card.classList.add('turn-card-back-part1');
+  card.addEventListener("animationend", () => {
+    card.setAttribute('src','images/blank.png');
+    card.classList.add('turn-card-back-part2');
+  },{once : true});
 }
 
 function playAgain(){
