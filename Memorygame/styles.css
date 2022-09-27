@@ -1,0 +1,114 @@
+:root{
+  --dark-blue-color: rgb(16, 182, 182);
+  --font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+  background-image: url('images/background.jpg');
+  background-size: 100% 100%;
+  height: 99vh;
+  width: 98vw;
+}
+
+.board{
+  position: fixed;
+  z-index: 1;
+  top: 2vh;
+  left: 2vw;
+  right: 2vw;
+  bottom: 2vh;
+  background-color: rgba(120, 198, 254, 0.8);
+  border-radius: 20px;
+  border-width: 10px;
+  border-style: double;
+  border-color: var(--dark-blue-color);
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  animation: go-down 1.4s ease-in 0s 1;
+  animation-fill-mode: forwards;
+  -webkit-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -ms-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -moz-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -o-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+}
+
+.board h2{
+  font-family: var(--font-family);
+  font-weight: 900;
+  color: var(--dark-blue-color);
+}
+
+.grid{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 5vw;
+}
+
+.board h2, 
+.grid{
+  opacity:0%;
+  animation: fade-in 1s ease-in-out 1.7s 1;
+  animation-fill-mode: forwards;
+  -webkit-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -ms-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -moz-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -o-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+}
+
+.container{
+  background-color: rgba(199, 225, 225, 0.9);
+  height: 40vh;
+  width: 15vw;
+  border-style: solid;
+  border-color: var(--dark-blue-color);
+  border-width: 5px;
+  border-radius: 16px;
+  transition: border-radius 0.8s, border-color 0.8s, box-shadow 0.8s;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.container:hover{
+  border-radius: 36px;
+  border-color: rgb(9, 183, 247);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.container-image{
+  height: 40%;
+  width: 92%;
+  display: block;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+  border-color: var(--dark-blue-color);
+  object-fit: fill;
+}
+
+.container-title{
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark-blue-color);
+  text-align: center;
+}
+
+@keyframes fade-in{
+  from{opacity: 0%;}
+  to{opacity: 100%;}
+}
+
+@keyframes go-down{
+  from{bottom:98vh;}
+  to{bottom:2vh;}
+}
+
+@media screen and (max-width: 800px) {
+  .container{
+    width: 22vw;
+  }
+}
