@@ -170,7 +170,7 @@ body{
   -o-animation: fade-out 0.3s ease-out 0s 1 normal forwards;
 }
 
-keyframes fade-out{
+@keyframes fade-out{
   0%{opacity: 100%;}
   25%{opacity: 75%;}
   50%{opacity: 50%;}
