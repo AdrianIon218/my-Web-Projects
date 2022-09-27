@@ -85,7 +85,7 @@ function flipCard(){
 
     cardChosenNames.push(cardArray[cardId].name)
     cardsChosenIds.push(cardId)
-    
+
     if(cardChosenNames.length === 2){
       setTimeout(checkMatch, 300);
     }
@@ -118,13 +118,13 @@ function checkMatch(){
         cards[option2Id].classList.add('card-hidden')
         cards[option1Id].removeEventListener('click',flipCard)
         cards[option2Id].removeEventListener('click',flipCard)
-      },550);
+      },600);
     }
     else{
       setTimeout(()=>{
         turnCardBack(cards[option1Id])
         turnCardBack(cards[option2Id])
-      },500); 
+      },600); 
     }
     
     setTimeout(() => {
