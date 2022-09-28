@@ -137,7 +137,7 @@ function checkMatch(){
   scoreDisplay.textContent = scoreCounter
 
   if(scoreCounter == (cardArray.length)/2){
-    displayMessage()
+    setTimeout(()=>displayMessage(), 850)
   }
 
   cardChosenNames = []
