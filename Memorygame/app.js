@@ -131,7 +131,6 @@ function checkMatch(){
       cards[option2Id].classList.remove('show-card-contain-part1')
       cards[option2Id].classList.remove('show-card-contain-part2')
     }, 400);
-    
   }
 
   scoreDisplay.textContent = scoreCounter
@@ -162,15 +161,23 @@ function turnCardBack(card){
 
 function playAgain(){
   if(!messageDisplay.classList.contains('discovered-message')){
+    gridDisplay.classList.remove('grid-fade-in')
     cardChosenNames = []
     cardsChosenIds = []
     scoreDisplay.textContent = scoreCounter = 0
     const cards = document.querySelectorAll('.grid img')
     cards.forEach(card => {
+      if(!card.classList.contains('card-hidden')){
+        card.classList.add('grid-fade-out')
+      }
       gridDisplay.removeChild(card)
     });
     cardArray.sort(() => 0.5 - Math.random())
-    createBoard()
+    createBoard() 
+    
+    setTimeout(()=>{ 
+        gridDisplay.classList.add('grid-fade-in')
+    },300)
   }
 }
 

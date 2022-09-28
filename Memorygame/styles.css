@@ -130,6 +130,7 @@ body{
 }
 
 .grid {
+  opacity: 0%;
   position: absolute;
   top: 10vh;
   right: 10vw;
@@ -142,6 +143,30 @@ body{
   grid-template-columns: 1fr 1fr 1fr 1fr ;
   column-gap: 1vw;
   row-gap: 1vh;
+}
+
+.grid-fade-in{
+  animation: fade-in 1s ease-in-out 0.3s 1 normal forwards;
+  -webkit-animation: fade-in 1s ease-in-out 0.3s 1 normal forwards;
+  -ms-animation: fade-in 1s ease-in-out 0.3s 1 normal forwards;
+  -moz-animation: fade-in 1s ease-in-out 0.3s 1 normal forwards;
+  -o-animation: fade-in 1s ease-in-out 0.3s 1 normal forwards;
+}
+
+.grid-fade-out{
+  animation: fade-out 1s ease-in-out 0s 1 normal forwards;
+  -webkit-animation: fade-out 1s ease-in-out 0s 1 normal forwards;
+  -ms-animation: fade-out 1s ease-in-out 0s 1 normal forwards;
+  -moz-animation: fade-out 1s ease-in-out 0s 1 normal forwards;
+  -o-animation: fade-out 1s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes fade-in{
+  0%{opacity: 0%;}
+  25%{opacity: 25%;}
+  50%{opacity: 50%;}
+  75%{opacity: 75%;}
+  100%{opacity: 100%;}
 }
 
 .card{
