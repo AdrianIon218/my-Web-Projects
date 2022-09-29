@@ -298,8 +298,8 @@ body{
 
 .grid{
   position: fixed;
-  left:40vw;
-  top: 20vh;
+  left:30vw;
+  top: 15vh;
   border: 15px double rgb(29, 224, 110);
   background-color: rgba(83, 175, 250, 0.75);
   border-radius: 20px;
