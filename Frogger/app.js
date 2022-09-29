@@ -27,6 +27,13 @@ let outcomeTimerId
 let isPause = true
 let wasMessageShown = false
 
+if(navigator.userAgent.indexOf( "Mobile" ) !== -1 || 
+  navigator.userAgent.indexOf( "iPhone" ) !== -1 || 
+  navigator.userAgent.indexOf( "Android" ) !== -1 || 
+  navigator.userAgent.indexOf( "Windows Phone" ) !== -1 )
+{
+  document.querySelector('phone-arrows').setProperty('display','block')
+}
 
 function moveFrog(e){
   if(isPause === false){
