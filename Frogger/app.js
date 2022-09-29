@@ -15,6 +15,8 @@ const logsright = document.querySelectorAll(".log-right")
 const carsLeft = document.querySelectorAll('.car-left')
 const carsRight = document.querySelectorAll(".car-right")
 
+const helpPanelDisplay = document.querySelector('.help-panel')
+
 let currentIndex = 85
 const rowWidth = 9
 const rowNum = 10
@@ -282,6 +284,22 @@ restartButton.addEventListener(
 
 function changePage(page){
   location.href = page
+}
+
+function closeHelpPanel(){
+  helpPanelDisplay.classList.add('help-panel-hide')
+  helpPanelDisplay.addEventListener('animationend',()=>{
+    helpPanelDisplay.classList.remove('help-panel-shown')
+    helpPanelDisplay.classList.remove('help-panel-hide')
+    if(!pauseButton.classList.contains('pressed-btn')){
+      isPause = false
+    }
+  },{once:true})
+}
+
+function showHelpPanel(){
+  helpPanelDisplay.classList.add('help-panel-shown')
+  isPause = true
 }
 
 

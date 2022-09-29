@@ -16,6 +16,38 @@
     </p>
     <button class="message-close-btn" onclick="closeMessage()">X</button>
   </div>
+
+  <div class="help-panel">
+    <h2>The idea of the game</h2>
+    <p>
+      The player must guide a frog placed at the bottom of the screen , to its home , located at the top of the screen <img class="little-image" src="images/lily_flower.png" alt=""> .
+    </p>
+    <p>
+      The frog's movements can be controled by the player using the 4 arrows :<br> 
+      <img class="big-image" src="images/keywords.png" alt="&#8592; &#8592;  &#8594;  &#8595;"> 
+    </p>
+    <h2>Rules</h2>
+    <p>
+      The player wins only if the frog reaches home in time .
+    </p>
+    <p class="paragraph-list">
+      The player loses if :
+    </p>
+    <ul>
+      <li>
+        the frog is hit by a car <br>
+        <img class="little-image" src="images/right-car.png">
+        <img class="little-image" src="images/left-car.png">
+      </li>
+      <li>
+        the frog falls into the river
+      </li>
+      <li>
+        the time is running out (20s)
+      </li>
+    </ul>
+    <button class="help-panel-close-btn" onclick="closeHelpPanel()">X</button>
+  </div>
   
   <h2 class="time-countdown">Seconds left : <span id="time-left">20</span>s</h2>
 
@@ -23,6 +55,7 @@
     <button class="start-pause-restart-button" id="start-btn">Start</button>
     <button class="start-pause-restart-button unavailable-btn" id="pause-btn">Pause</button>
     <button class="start-pause-restart-button unavailable-btn" id="restart-btn">Restart</button>
+    <button class="start-pause-restart-button" id="help-btn" onclick="showHelpPanel()">Help</button>
   </nav>
 
   <button class="change-page-btn" onclick="changePage('../MainPage/index.html')">Other projects</button>
