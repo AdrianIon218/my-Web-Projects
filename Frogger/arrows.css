@@ -3,13 +3,14 @@
   position:fixed;
   bottom: 2%;
   left: 50%;
-  height: 10%;
-  width: 20%;
+  height: 10vh;
+  right:20%;
 }
 
 .phone-arrows button{
   color: darkgreen;
   font-weight: 800;
+  font-size: 5vh;
   border-radius: 25%;
   border-color: darkgreen;
   border-width: 3px;
@@ -18,8 +19,7 @@
   padding: 3px;
   text-align: center;
   transition: border-width 0.5s;
-  font-size: 30px;
-  min-width: 30px;
+  min-width: 5vw;
 }
 
 .phone-arrows button:active{
