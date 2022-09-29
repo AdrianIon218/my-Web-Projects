@@ -18,7 +18,7 @@
   padding: 3px;
   text-align: center;
   transition: border-width 0.5s;
-  font-size: 20px;
+  font-size: 1vh;
 }
 
 .phone-arrows button:active{
