@@ -1,0 +1,61 @@
+.phone-arrows{
+  display:none;
+  position:fixed;
+  bottom: 2%;
+  left: 50%;
+  height: 10%;
+  width: 20%;
+}
+
+.phone-arrows button{
+  color: darkgreen;
+  font-weight: 800;
+  border-radius: 25%;
+  border-color: darkgreen;
+  border-width: 3px;
+  border-style: solid;
+  background-color: aliceblue;
+  padding: 3px;
+  text-align: center;
+  transition: border-width 0.5s;
+}
+
+.phone-arrows button:active{
+  border-width: 6px;
+}
+
+#arrow-left{
+  position: absolute;
+  left: 3%;
+  top: 40%;
+  padding-right: 7px;
+}
+
+#arrow-right{
+  position: absolute;
+  right:3%;
+  top:40%;
+  padding-right: 7px;
+}
+
+#arrow-up{
+  position: absolute;
+  top:3%;
+  left:37%;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+#arrow-down{
+  position: absolute;
+  bottom:3%;
+  left:37%;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+@media only screen and (max-width: 800px) {
+  .phone-arrows{
+    display: block;
+  }
+}

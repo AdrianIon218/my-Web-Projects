@@ -5,6 +5,7 @@
   <title>Frogger game</title>
   <link rel="shortcut icon" type="image" href="images/icon.png">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="arrows.css">
 </head>
 <body>
   
@@ -159,6 +160,12 @@
       <div></div>
   </div>
 
+  <div class="phone-arrows">
+    <button id="arrow-left" onclick="moveByArrows('ArrowLeft')">&#8592;</button>
+    <button id="arrow-up" onclick="moveByArrows('ArrowUp')">&#8593;</button>
+    <button id="arrow-down" onclick="moveByArrows('ArrowDown')">&#8595;</button>
+    <button id="arrow-right" onclick="moveByArrows('ArrowRight')">&#8594;</button>
+  </div>
   <script src="app.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

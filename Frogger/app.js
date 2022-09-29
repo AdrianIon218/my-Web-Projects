@@ -31,8 +31,6 @@ let wasMessageShown = false
 function moveFrog(e){
   if(isPause === false){
     squares[currentIndex].classList.remove('frog-position')
-    /*squares[currentIndex].innerHTML=''*/
-    console.log(currentIndex)
     switch(e.key){
       case "ArrowLeft":
         if(currentIndex % rowWidth !==0) currentIndex--
@@ -48,7 +46,27 @@ function moveFrog(e){
       break
   }
   squares[currentIndex].classList.add('frog-position')
-  /*squares[currentIndex].innerHTML = '<div class="frog"></div>'*/
+  }
+}
+
+function moveByArrows(arrowName){
+  if(isPause === false && wasMessageShown === false){
+    squares[currentIndex].classList.remove('frog-position')
+    switch(arrowName){
+      case "ArrowLeft":
+        if(currentIndex % rowWidth !==0) currentIndex--
+      break
+      case "ArrowRight":
+        if(currentIndex % rowWidth < rowWidth-1)currentIndex+=1
+      break
+      case "ArrowUp":
+        if(currentIndex - rowWidth >=0)currentIndex-=rowWidth
+      break
+      case "ArrowDown":
+        if(currentIndex + rowWidth <= rowWidth*rowNum)currentIndex+=rowWidth
+      break
+  }
+  squares[currentIndex].classList.add('frog-position')
   }
 }
 
@@ -113,6 +131,7 @@ function win(){
 function showMessage(wonGame){
   pauseButton.classList.add('unavailable-btn')
   restartButton.classList.add('unavailable-btn')
+  wasMessageShown = true
 
   if(wonGame === true){
     finalMessage.classList.add('message-win')
@@ -132,7 +151,6 @@ function showMessage(wonGame){
 
 function closeMessage(){
   restartButton.classList.remove('unavailable-btn')
-  wasMessageShown = true
   finalMessage.classList.remove('message-win')
   finalMessage.classList.remove('message-lose')
   messageText.textContent = ''
