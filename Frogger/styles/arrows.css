@@ -1,0 +1,84 @@
+.phone-arrows{
+  display:none;
+  position:fixed;
+  bottom: 1%;
+  left: 40%;
+  width: 30%;
+  height: 14%;
+}
+
+.phone-arrows button{
+  color: darkgreen;
+  font-weight: 800;
+  font-size: larger;
+  border-radius: 25%;
+  border-color: darkgreen;
+  border-width: 3px;
+  border-style: solid;
+  background-color: aliceblue;
+  transition: border-width 0.5s;
+}
+
+.phone-arrows button:active{
+  border-width: 6px;
+}
+
+#arrow-left{
+  position: absolute;
+  left: 0%;
+  bottom: 37%;
+  height: 30%;
+  width: 35%;
+  background-image: url('../images/arrow-left.png');
+  background-size: 90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+#arrow-right{
+  position: absolute;
+  left:60%;
+  bottom:37%;
+  height: 30%;
+  width: 35%;
+  background-image: url('../images/arrow-right.png');
+  background-size: 90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+#arrow-up{
+  position: absolute;
+  top:0%;
+  left:35%;
+  height: 35%;
+  width: 25%;
+  background-image: url('../images/arrow-up.png');
+  background-size: 90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+#arrow-down{
+  position: absolute;
+  bottom:0%;
+  left:35%;
+  height: 35%;
+  width: 25%;
+  background-image: url('../images/arrow-down.png');
+  background-size: 90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .phone-arrows{
+    display: block;
+  }
+}
+
