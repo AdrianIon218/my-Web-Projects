@@ -17,13 +17,13 @@ const carsRight = document.querySelectorAll(".car-right")
 
 const helpPanelDisplay = document.querySelector('.help-panel')
 
-let currentIndex = 85
 const rowWidth = 9
 const rowNum = 10
-let timerId
+
+let currentIndex = 85
 let currentTime = 20
 let outcomeTimerId
-
+let timerId
 let isPause = true
 let wasMessageShown = false
 
