@@ -43,7 +43,8 @@ body{
 .grid{
   display:flex;
   flex-wrap: wrap;
-  gap: 5vw;
+  column-gap:5vw;
+  row-gap: 4vh;
 }
 
 .board h2, 
@@ -59,8 +60,8 @@ body{
 
 .container{
   background-color: rgba(199, 225, 225, 0.9);
-  height: 40vh;
-  width: 15vw;
+  height: 34vh;
+  width: 14vw;
   border-style: solid;
   border-color: var(--dark-blue-color);
   border-width: 5px;
@@ -85,9 +86,37 @@ body{
   margin-top: 4%;
   margin-bottom: 3%;
   border-radius: 10px;
-  border-color: var(--dark-blue-color);
   object-fit: fill;
 }
+
+.images-overlap{
+  position: relative;
+  top:4%;
+  left:4%;
+  height: 40%;
+  width: 92%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
+.container-image-message{
+  position: absolute;
+  height: 40%;
+  width: 50%;
+  top: -20%;
+  left: -5%;
+  z-index: 2;
+}
+
+.container-image-game-soon{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 
 .container-title{
   font-family: var(--font-family);
@@ -95,6 +124,16 @@ body{
   font-weight: 800;
   color: var(--dark-blue-color);
   text-align: center;
+}
+
+.coming-soon{
+  background-color: rgb(165, 164, 164) !important;
+  border-color:rgb(106, 104, 104) !important;
+  cursor: default;
+}
+
+.coming-soon .container-title{
+  color:white;
 }
 
 @keyframes fade-in{
