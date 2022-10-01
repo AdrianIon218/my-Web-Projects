@@ -49,31 +49,37 @@ function generateComputerChoice(){
 }
 
 function getResult(){
-  if(computerChoice==userChoice){
+  if(computerChoice == userChoice){
     title.innerHTML = drawMessage 
     title.innerHTML +='<span class="emoji">&#128521;</span>'
   }
   if(computerChoice == 'rock' && userChoice=='paper'){
-    title.textContent  = winMessage
+    title.classList.add('win-game')
+    title.textContent = winMessage
     title.innerHTML +='<span class="emoji">&#128522;</span>'
   } 
   if(computerChoice == 'rock' && userChoice=='scissors'){
+    title.classList.add('lose-game')
     title.innerHTML = loseMessage
     title.innerHTML +='<span class="emoji">&#128580;</span>'
   } 
   if(computerChoice == 'paper' && userChoice=='scissors'){
+    title.classList.add('win-game')
     title.innerHTML = winMessage
     title.innerHTML +='<span class="emoji">&#128522;</span>'
   } 
   if(computerChoice == 'paper' && userChoice=='rock'){
+    title.classList.add('lose-game')
     title.innerHTML = loseMessage
     title.innerHTML +='<span class="emoji">&#128580;</span>'
   } 
   if(computerChoice == 'scissors' && userChoice=='paper'){
+    title.classList.add('lose-game')
     title.innerHTML = loseMessage
     title.innerHTML +='<span class="emoji">&#128580;</span>'
   } 
   if(computerChoice == 'scissors' && userChoice=='rock'){
+    title.classList.add('win-game')
     title.innerHTML = winMessage
     title.innerHTML +='<span class="emoji">&#128522;</span>'
   } 
@@ -85,6 +91,8 @@ function playAgain(){
     possibleChoice.classList.remove('card_chosen')
     possibleChoice.classList.remove('card_block')
   })
+  title.classList.remove('win-game')
+  title.classList.remove('lose-game')
   title.textContent = 'Choose a card '
   title.innerHTML += '<span class="emoji">&#129488;</span>'
   computerChoiceDisplay.style.visibility = "hidden"

@@ -39,6 +39,14 @@ body{
   text-align: center;
 }
 
+.win-game{
+  color: rgb(51, 227, 51);
+}
+
+.lose-game{
+  color:rgb(214, 9, 9);
+}
+
 .emoji{
   font-size:40px;
 }
@@ -161,13 +169,19 @@ body{
 
 #computer-choice{
   visibility: hidden;
-  height: 14vh;
+  height: 12vh;
   width: 10vw;
   border-radius: 10px;
   border-width: var(--button-border-width);
   border-style: solid;
   border-color: rgb(28, 219, 28);
   margin-left: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #computer-choice{
+    width: 18vw;
+  }
 }
 
 
