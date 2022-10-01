@@ -161,8 +161,8 @@ body{
 
 #computer-choice{
   visibility: hidden;
-  height: 10vh;
-  width: 7vw;
+  height: 14vh;
+  width: 10vw;
   border-radius: 10px;
   border-width: var(--button-border-width);
   border-style: solid;
