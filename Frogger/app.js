@@ -27,47 +27,7 @@ let timerId
 let isPause = true
 let wasMessageShown = false
 
-function moveFrog(e){
-  if(isPause === false){
-    squares[currentIndex].classList.remove('frog-position')
-    switch(e.key){
-      case "ArrowLeft":
-        if(currentIndex % rowWidth !==0) currentIndex--
-      break
-      case "ArrowRight":
-        if(currentIndex % rowWidth < rowWidth-1)currentIndex+=1
-      break
-      case "ArrowUp":
-        if(currentIndex - rowWidth >=0)currentIndex-=rowWidth
-      break
-      case "ArrowDown":
-        if(currentIndex + rowWidth <= rowWidth*rowNum)currentIndex+=rowWidth
-      break
-  }
-  squares[currentIndex].classList.add('frog-position')
-  }
-}
 
-function moveByArrows(arrowName){
-  if(isPause === false && wasMessageShown === false){
-    squares[currentIndex].classList.remove('frog-position')
-    switch(arrowName){
-      case "ArrowLeft":
-        if(currentIndex % rowWidth !==0) currentIndex--
-      break
-      case "ArrowRight":
-        if(currentIndex % rowWidth < rowWidth-1)currentIndex+=1
-      break
-      case "ArrowUp":
-        if(currentIndex - rowWidth >=0)currentIndex-=rowWidth
-      break
-      case "ArrowDown":
-        if(currentIndex + rowWidth <= rowWidth*rowNum)currentIndex+=rowWidth
-      break
-  }
-  squares[currentIndex].classList.add('frog-position')
-  }
-}
 
 startButton.addEventListener(
   'click', () => {
@@ -145,16 +105,24 @@ function showMessage(wonGame){
     closeBtn.classList.add('message-close-btn-lose')
   }
 
+  finalMessage.classList.add('message-fade-in')
+
   clearGeneralEvents()
 }
 
 function closeMessage(){
-  restartButton.classList.remove('unavailable-btn')
-  finalMessage.classList.remove('message-win')
-  finalMessage.classList.remove('message-lose')
-  messageText.textContent = ''
-  emoji.innerHTML = ''
-  closeBtn.classList.remove('message-close-btn-lose')
+  finalMessage.classList.remove('message-fade-in')
+  finalMessage.classList.add('message-fade-out')
+  
+  finalMessage.addEventListener('animationend',()=>{
+    restartButton.classList.remove('unavailable-btn')
+    finalMessage.classList.remove('message-win')
+    finalMessage.classList.remove('message-lose')
+    messageText.textContent = ''
+    emoji.innerHTML = ''
+    closeBtn.classList.remove('message-close-btn-lose')
+    finalMessage.classList.remove('message-fade-out')
+  },{'once':true})
 }
 
 function clearGeneralEvents(){
@@ -299,8 +267,51 @@ restartButton.addEventListener(
   }
 )
 
-function changePage(page){
-  location.href = page
+function moveFrog(e){
+  if(isPause === false){
+    squares[currentIndex].classList.remove('frog-position')
+    switch(e.key){
+      case "ArrowLeft":
+        if(currentIndex % rowWidth !==0) currentIndex--
+      break
+      case "ArrowRight":
+        if(currentIndex % rowWidth < rowWidth-1)currentIndex+=1
+      break
+      case "ArrowUp":
+        if(currentIndex - rowWidth >=0)currentIndex-=rowWidth
+      break
+      case "ArrowDown":
+        if(currentIndex + rowWidth <= rowWidth*rowNum)currentIndex+=rowWidth
+      break
+  }
+  squares[currentIndex].classList.add('frog-position')
+  }
+}
+
+function moveByArrows(arrowName){
+  if(isPause === false && wasMessageShown === false){
+    squares[currentIndex].classList.remove('frog-position')
+    switch(arrowName){
+      case "ArrowLeft":
+        if(currentIndex % rowWidth !==0) currentIndex--
+      break
+      case "ArrowRight":
+        if(currentIndex % rowWidth < rowWidth-1)currentIndex+=1
+      break
+      case "ArrowUp":
+        if(currentIndex - rowWidth >=0)currentIndex-=rowWidth
+      break
+      case "ArrowDown":
+        if(currentIndex + rowWidth <= rowWidth*rowNum)currentIndex+=rowWidth
+      break
+  }
+  squares[currentIndex].classList.add('frog-position')
+  }
+}
+
+function showHelpPanel(){
+  helpPanelDisplay.classList.add('help-panel-shown')
+  isPause = true
 }
 
 function closeHelpPanel(){
@@ -314,9 +325,6 @@ function closeHelpPanel(){
   },{once:true})
 }
 
-function showHelpPanel(){
-  helpPanelDisplay.classList.add('help-panel-shown')
-  isPause = true
+function changePage(page){
+  location.href = page
 }
-
-
