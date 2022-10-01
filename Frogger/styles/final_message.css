@@ -28,6 +28,38 @@
   color: var(--red-border);
 }
 
+.message-fade-in{
+  animation: message-fade-in 0.4s ease-in-out 0s 1 normal forwards;
+  -webkit-animation: message-fade-in 0.4s ease-in-out 0s 1 normal forwards;
+  -ms-animation: message-fade-in 0.4s ease-in-out 0s 1 normal forwards;
+  -moz-animation: message-fade-in 0.4s ease-in-out 0s 1 normal forwards;
+  -o-animation: message-fade-in 0.4s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes message-fade-in {
+  0%{opacity: 0%;}
+  25%{opacity: 25%;}
+  50%{opacity: 50%;}
+  75%{opacity: 75%;}
+  100%{opacity: 100%;}
+}
+
+.message-fade-out{
+  animation: message-fade-out 0.4s ease-in-out 0s 1 normal forwards;
+  -webkit-animation: message-fade-out 0.4s ease-in-out 0s 1 normal forwards;
+  -ms-animation: message-fade-out 0.4s ease-in-out 0s 1 normal forwards;
+  -moz-animation: message-fade-out 0.4s ease-in-out 0s 1 normal forwards;
+  -o-animation: message-fade-out 0.4s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes message-fade-out {
+  0%{opacity: 100%;}
+  25%{opacity: 75%;}
+  50%{opacity: 50%;}
+  75%{opacity: 25%;}
+  100%{opacity: 0%;}
+}
+
 .emoji{
   margin-top: 10%;
   font-size: 2em;
