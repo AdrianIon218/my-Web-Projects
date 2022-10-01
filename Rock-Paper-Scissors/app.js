@@ -1,6 +1,8 @@
 const computerChoiceDisplay = document.getElementById('computer-choice')
 const title = document.querySelector('.instruction')
 const possibleChoices = document.querySelectorAll('.card')
+const panel = document.querySelector('.panel')
+
 let userChoice 
 let computerChoice
 let iscardchosen = false
@@ -54,31 +56,37 @@ function getResult(){
     title.innerHTML +='<span class="emoji">&#128521;</span>'
   }
   if(computerChoice == 'rock' && userChoice=='paper'){
+    panel.style.setProperty('border-color','lightgreen')
     title.classList.add('win-game')
     title.textContent = winMessage
     title.innerHTML +='<span class="emoji">&#128522;</span>'
   } 
   if(computerChoice == 'rock' && userChoice=='scissors'){
+    panel.style.setProperty('border-color','red')
     title.classList.add('lose-game')
     title.innerHTML = loseMessage
     title.innerHTML +='<span class="emoji">&#128580;</span>'
   } 
   if(computerChoice == 'paper' && userChoice=='scissors'){
+    panel.style.setProperty('border-color','lightgreen')
     title.classList.add('win-game')
     title.innerHTML = winMessage
     title.innerHTML +='<span class="emoji">&#128522;</span>'
   } 
   if(computerChoice == 'paper' && userChoice=='rock'){
+    panel.style.setProperty('border-color','red')
     title.classList.add('lose-game')
     title.innerHTML = loseMessage
     title.innerHTML +='<span class="emoji">&#128580;</span>'
   } 
   if(computerChoice == 'scissors' && userChoice=='paper'){
+    panel.style.setProperty('border-color','red')
     title.classList.add('lose-game')
     title.innerHTML = loseMessage
     title.innerHTML +='<span class="emoji">&#128580;</span>'
   } 
   if(computerChoice == 'scissors' && userChoice=='rock'){
+    panel.style.setProperty('border-color','lightgreen')
     title.classList.add('win-game')
     title.innerHTML = winMessage
     title.innerHTML +='<span class="emoji">&#128522;</span>'
@@ -86,6 +94,7 @@ function getResult(){
 }
 
 function playAgain(){
+  panel.style.setProperty('border-color','gray')
   iscardchosen = false;
   possibleChoices.forEach(possibleChoice => {
     possibleChoice.classList.remove('card_chosen')
