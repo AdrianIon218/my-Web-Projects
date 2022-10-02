@@ -47,6 +47,10 @@ body{
   color:rgb(214, 9, 9);
 }
 
+.draw-game{
+  color:rgb(15, 159, 159);
+}
+
 .emoji{
   font-size:40px;
 }
