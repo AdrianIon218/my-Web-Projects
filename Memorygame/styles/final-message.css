@@ -1,0 +1,67 @@
+.final-message{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 20vh;
+  left: 40vw;
+  width: 20vw;
+  height: 26vh;
+  border: 10px double rgb(250, 224, 79);
+  background-color: rgba(218, 165, 32,0.8);
+  padding-top: 10px;
+}
+
+.final-message p{
+  color: aliceblue;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 26px;
+  text-align: center;
+}
+
+.close-message{
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  border: solid;
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
+  color:aliceblue;
+  text-align: center;
+  padding:0px;
+  font-weight: 800;
+  border-color:  rgb(250, 224, 79);
+  background-color: rgba(218, 165, 32,0.8);
+  transition: background-color 0.5s,  border-color 0.5s;
+}
+
+.close-message:hover{
+  background-color:red;
+  border-color: aliceblue;
+  cursor: pointer;
+}
+
+.discovered-message{
+  display: block;
+}
+
+.emoji{
+  font-size: 50px;
+}
+
+.message-fade-in{
+  animation: fade-in 0.8s ease-in-out 0s 1 normal forwards;
+  -webkit-animation: fade-in 0.8s ease-in-out 0s 1 normal forwards;
+  -ms-animation: fade-in 0.8s ease-in-out 0s 1 normal forwards;
+  -moz-animation: fade-in 0.8s ease-in-out 0s 1 normal forwards;
+  -o-animation: fade-in 0.8s ease-in-out 0s 1 normal forwards;
+}
+
+.message-fade-out{
+  animation: fade-out 0.6s ease-in-out 0s 1 normal forwards;
+  -webkit-animation: fade-out 0.6s ease-in-out 0s 1 normal forwards;
+  -ms-animation: fade-out 0.6s ease-in-out 0s 1 normal forwards;
+  -moz-animation: fade-out 0.6s ease-in-out 0s 1 normal forwards;
+  -o-animation: fade-out 0.6s ease-in-out 0s 1 normal forwards;
+}
+
