@@ -68,8 +68,8 @@ h2.title{
 
 .container{
   background-color: rgba(199, 225, 225, 0.9);
-  height: 28vh;
-  width: 14vw;
+  height: 30vh;
+  width: 13vw;
   border-style: solid;
   border-color: var(--dark-blue-color);
   border-width: 5px;
