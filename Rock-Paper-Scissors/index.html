@@ -2,46 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My projects</title>
+  <title>Rock Paper Scissors</title>
   <link rel="shortcut icon" type="image" href="images/icon.png">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="board">
-    <h2 class="title">Welcome !</h2>
-    <div class="grid">
-      <div class="container" onclick="changePage('../Rock-Paper-Scissors/index.html')">
-        <img class="container-image" src="images/paper.png" alt="rock paper scissors">
-        <p class="container-title">Rock Paper Scissors</p>
-      </div>
-  
-      <div class="container" onclick="changePage('../Memorygame/index.html')">
-        <img class="container-image" src="images/blank.png" alt="Memory game">
-        <p class="container-title">Memory game</p>
-      </div>
-  
-      <div class="container" onclick="changePage('../Frogger/index.html')">
-        <img class="container-image" src="images/lily_flower.png" alt="Frogger game">
-        <p class="container-title">Frogger game</p>
-      </div>
-
-      <div class="container coming-soon" onclick="">
-        <div class="images-overlap">
-          <img class="container-image-message" src="images/comming_soon.png" alt="comming soon">
-          <img class="container-image-game-soon" src="images/space_shooter.png" alt="Space invaders">
-        </div>
-        <p class="container-title">Space Invaders</p>
-      </div>
-
-      <div class="container coming-soon" onclick="">
-        <div class="images-overlap">
-          <img class="container-image-message" src="images/comming_soon.png" alt="comming soon">
-          <img class="container-image-game-soon" src="images/tic-tac-toe.png" alt="Space invaders">
-        </div>
-        <p class="container-title">Tic Tac Toe</p>
-      </div>
-    </div>
+<div class="panel">
+  <div class="start-container">
+    <p class="instruction"> Choose a card <span class="emoji">&#129488;</span></p>
   </div>
+  
+  <div class="cards_row">
+    <button class="card rock-image" id="rock" draggable="false"></button>
+    <button class="card paper-image" id="paper" draggable="false"></button>
+    <button class="card scissors-image" id="scissors" draggable="false"></button>
+  </div>
+
+  <div class="middle-container">
+    <p class="instruction">Computer choice :</p><div class="circle"></div>
+  </div>
+  
+  <nav class="menu-down">
+    <div></div>
+    <!--
+      <button class="menu-btn" onclick="location.href=''">Go to CV</button>
+    -->
+    <button class="menu-btn" onclick="resetGame()">Play again</button>
+    <button class="menu-btn" onclick="changePage('../MainPage/index.html')">Projects </button>
+  </nav>
+</div>
 
   <script src="app.js" type="text/javascript" charset="utf-8"></script>
 </body>
