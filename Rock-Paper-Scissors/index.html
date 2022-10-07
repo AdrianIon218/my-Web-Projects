@@ -5,8 +5,24 @@
   <title>Rock Paper Scissors</title>
   <link rel="shortcut icon" type="image" href="images/icon.png">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="styles/computer.css">
+  <link rel="stylesheet" type="text/css" href="styles/help.css">
+  <link rel="stylesheet" type="text/css" href="styles/menu.css">
 </head>
 <body>
+
+<div class="help-panel">
+  <h2>The idea of the game</h2>
+    <ul>
+      <li>The player must select a card placed on the board . </li>
+      <li>The chosen card will represents the user's choice. .</li>
+      <li>Afterwards, the computer also will randomly choose  a card . </li>
+    </ul>
+  <h2>Rules :</h2> 
+    <div class="rules_explain"></div>  
+  <button class="help-panel-close-btn" onclick="hideHelp()">X</button>
+</div>
+
 <div class="panel">
   <div class="start-container">
     <p class="instruction"> Choose a card <span class="emoji">&#129488;</span></p>
@@ -23,10 +39,7 @@
   </div>
   
   <nav class="menu-down">
-    <div></div>
-    <!--
-      <button class="menu-btn" onclick="location.href=''">Go to CV</button>
-    -->
+    <button class="menu-btn" onclick="showHelp()">Help</button>
     <button class="menu-btn" onclick="resetGame()">Play again</button>
     <button class="menu-btn" onclick="changePage('../MainPage/index.html')">Projects </button>
   </nav>
