@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
   <link rel="shortcut icon" type="image" href="images/icon.png">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="general_style.css">
   <link rel="stylesheet" type="text/css" href="styles/computer.css">
   <link rel="stylesheet" type="text/css" href="styles/help.css">
   <link rel="stylesheet" type="text/css" href="styles/menu.css">
+  <link rel="stylesheet" type="text/css" href="styles/footer.css">
 </head>
 <body>
 
 <div class="help-panel">
   <h2>The idea of the game</h2>
-    <ul>
-      <li>The player must select a card placed on the board . </li>
-      <li>The chosen card will represents the user's choice. .</li>
-      <li>Afterwards, the computer also will randomly choose  a card . </li>
-    </ul>
+  <ul>
+    <li>The player must select a card placed on the board . </li>
+    <li>The chosen card will represents the user's choice. .</li>
+    <li>Afterwards, the computer also will randomly choose  a card . </li>
+  </ul>
   <h2>Rules :</h2> 
-    <div class="rules_explain"></div>  
+  <div class="rules_explain"></div>  
   <button class="help-panel-close-btn" onclick="hideHelp()">X</button>
 </div>
 
@@ -45,6 +46,15 @@
   </nav>
 </div>
 
-  <script src="app.js" type="text/javascript" charset="utf-8"></script>
+<footer>
+  <div class="logo">
+    Adrian Ion
+  </div>
+  <div class="social-media">
+    <button class="footer-btn linkedin" onclick="changePage('https://www.linkedin.com/in/adrian-gabriel-ion-05412a195//')"></button>
+  </div>
+</footer>
+
+<script src="app.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
