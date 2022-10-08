@@ -1,12 +1,13 @@
 footer{
   position:absolute;
-  top:116vh;
+  top: 100vh;
   left: 0;
   right: 0;
-  bottom: -24vh;
+  bottom: -10vh;
   background-color: rgb(141, 134, 134);
   z-index: 1;
   display:flex;
+  border-top: 10px double rgb(85, 84, 84);
   border-top-left-radius:14px;
   border-top-right-radius:14px;
   justify-content: space-between;
