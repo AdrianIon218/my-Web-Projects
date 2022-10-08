@@ -27,7 +27,41 @@ let timerId
 let isPause = true
 let wasMessageShown = false
 
+pauseButton.addEventListener(
+  'click', () =>{
+    if(!pauseButton.classList.contains('unavailable-btn')){
+      if(!pauseButton.classList.contains('pressed-btn')){
+        isPause = true
+        pauseButton.classList.add('pressed-btn')
+      }
+      else{
+        isPause = false
+        pauseButton.classList.remove('pressed-btn')
+      }
+    }
+  }
+)
 
+restartButton.addEventListener(
+  'click', () =>{
+    if(!restartButton.classList.contains('unavailable-btn')){
+      clearGeneralEvents()
+      wasMessageShown = false
+      isPause = true
+      currentTime = 20
+      timeLeftDisplay.textContent = currentTime
+
+      squares[currentIndex].classList.remove('frog-position')
+      currentIndex = 85
+      squares[currentIndex].classList.add('frog-position')
+      
+      startButton.classList.remove('unavailable-btn')
+      pauseButton.classList.remove('pressed-btn')
+      pauseButton.classList.add('unavailable-btn')      
+      restartButton.classList.add('unavailable-btn')
+    }
+  }
+)
 
 startButton.addEventListener(
   'click', () => {
@@ -230,42 +264,6 @@ function moveCarRight(carRight){
       break      
   }
 }
-
-pauseButton.addEventListener(
-  'click', () =>{
-    if(!pauseButton.classList.contains('unavailable-btn')){
-      if(!pauseButton.classList.contains('pressed-btn')){
-        isPause = true
-        pauseButton.classList.add('pressed-btn')
-      }
-      else{
-        isPause = false
-        pauseButton.classList.remove('pressed-btn')
-      }
-    }
-  }
-)
-
-restartButton.addEventListener(
-  'click', () =>{
-    if(!restartButton.classList.contains('unavailable-btn')){
-      clearGeneralEvents()
-      wasMessageShown = false
-      isPause = true
-      currentTime = 20
-      timeLeftDisplay.textContent = currentTime
-
-      squares[currentIndex].classList.remove('frog-position')
-      currentIndex = 85
-      squares[currentIndex].classList.add('frog-position')
-      
-      startButton.classList.remove('unavailable-btn')
-      pauseButton.classList.remove('pressed-btn')
-      pauseButton.classList.add('unavailable-btn')      
-      restartButton.classList.add('unavailable-btn')
-    }
-  }
-)
 
 function moveFrog(e){
   if(isPause === false){
