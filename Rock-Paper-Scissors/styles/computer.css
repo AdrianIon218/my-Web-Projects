@@ -34,10 +34,14 @@
   border-radius: 10px;
   height: 12vh;
   width: 10vw;
-  border-width: var(--button-border-width);
+  border-width: 4px;
   border-style: solid;
   border-color: rgb(59, 134, 208);
-  animation: fade 1s linear 0s 1 normal forwards;
+  animation: fade  0.8s linear 0s 1 normal forwards;
+  -webkit-animation: fade 0.8s linear 0s 1 normal forward;
+  -ms-animation: fade 0.8s linear 0s 1 normal forward;
+  -moz-animation: fade  0.8s linear 0s 1 normal forward;
+  -o-animation: fade  0.8s linear 0s 1 normal forward;
 }
 
 @keyframes fade {

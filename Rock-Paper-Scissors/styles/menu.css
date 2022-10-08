@@ -10,7 +10,7 @@
 
 .menu-btn{
   color:rgb(23, 132, 23);
-  border: var(--button-border-width) solid rgb(23, 132, 23);
+  border: 5px solid rgb(23, 132, 23);
   border-radius: 20px;
   background-color: rgb(128, 226, 128);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
