@@ -1,7 +1,7 @@
 .board{
   background-color: rgba(5, 173, 225,0.9);
   border: 15px double rgba(5, 127, 164, 0.7);
-  position: fixed;
+  position: absolute;
   top: 15vh;
   right: 1vw;
   left: 1vw;
