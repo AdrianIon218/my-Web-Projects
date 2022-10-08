@@ -1,0 +1,62 @@
+footer{
+  position:absolute;
+  top: 100vh;
+  left: 0;
+  right: 0;
+  bottom: -10vh;
+  background-color: rgb(141, 134, 134);
+  z-index: 1;
+  display:flex;
+  border-top: 10px double rgb(85, 84, 84);
+  border-top-left-radius:14px;
+  border-top-right-radius:14px;
+  justify-content: space-between;
+}
+
+.logo{
+  margin-left: 10px;
+  height: auto;
+  width: auto;
+  color:aliceblue;
+  justify-self: center;
+  align-self: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 2px;
+  font-size: 3.5vh;
+}
+
+.social-media{
+  position: absolute;
+  top:0;
+  right:0;
+  bottom: 0;
+  width: 20vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-btn{
+  width: 15%;
+  height: 60%;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  cursor:pointer;
+}
+
+.footer-btn:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.linkedin{
+  background-image: url('../images/linkedin.png');
+}
+
+@media only screen and (max-width: 1000px) {
+  .footer-btn{
+    width: 27%;
+  }
+}

@@ -1,5 +1,5 @@
 .grid{
-  position: fixed;
+  position: absolute;
   left:30vw;
   top: 15vh;
   border: 15px double rgb(29, 224, 110);
@@ -64,8 +64,9 @@
   background-image: url('../images/right-car.png'), url('../images/frog.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%, 70% 70%;
   background-color: gray;
+  background-size: 100% 100%, 70% 70%;
+  animation: car-right-accident 2s ease-in-out 0s 1 normal forwards;
 }
 
 .c2, .c3, .cx{

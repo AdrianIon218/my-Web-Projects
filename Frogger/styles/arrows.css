@@ -1,6 +1,6 @@
 .phone-arrows{
   display:none;
-  position:fixed;
+  position:absolute;
   bottom: 1%;
   left: 40%;
   width: 30%;
