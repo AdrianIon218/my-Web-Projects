@@ -2,47 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My projects</title>
+  <title>Memory game</title>
   <link rel="shortcut icon" type="image" href="images/icon.png">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0;">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/final-message.css">
+  <link rel="stylesheet" type="text/css" href="styles/menu.css">
+  <link rel="stylesheet" type="text/css" href="styles/board.css">
   <link rel="stylesheet" type="text/css" href="styles/footer.css">
 </head>
 <body>
+  <nav class="menu-up">
+    <div></div>
+    <!--<button class="menu-btn" onclick="showInstruction()">Help ?</button>-->
+    <button class="menu-btn" onclick="playAgain()">Restart</button>
+    <button class="menu-btn" onclick="changePage('../MainPage/index.html')">Projects</button>
+  </nav>
+
+  <div class="final-message">
+    <p>
+      You won ! <br><span class="emoji">&#128512;</span>
+    </p>
+    <button class="close-message" onclick="closeMessage()">x</button>
+  </div>
+
   <div class="board">
-    <h2 class="title">Welcome !</h2>
-    <div class="grid">
-      <div class="container" onclick="changePage('../Rock-Paper-Scissors/index.html')">
-        <img class="container-image" src="images/paper.png" alt="rock paper scissors">
-        <p class="container-title">Rock Paper Scissors</p>
-      </div>
-  
-      <div class="container" onclick="changePage('../Memorygame/index.html')">
-        <img class="container-image" src="images/blank.png" alt="Memory game">
-        <p class="container-title">Memory game</p>
-      </div>
-  
-      <div class="container" onclick="changePage('../Frogger/index.html')">
-        <img class="container-image" src="images/lily_flower.png" alt="Frogger game">
-        <p class="container-title">Frogger game</p>
-      </div>
-
-      <div class="container coming-soon" onclick="">
-        <div class="images-overlap">
-          <img class="container-image-message" src="images/comming_soon.png" alt="comming soon">
-          <img class="container-image-game-soon" src="images/space_shooter.png" alt="Space invaders">
-        </div>
-        <p class="container-title">Space Invaders</p>
-      </div>
-
-      <div class="container coming-soon" onclick="">
-        <div class="images-overlap">
-          <img class="container-image-message" src="images/comming_soon.png" alt="comming soon">
-          <img class="container-image-game-soon" src="images/tic-tac-toe.png" alt="Space invaders">
-        </div>
-        <p class="container-title">Tic Tac Toe</p>
-      </div>
-    </div>
+    <p class="board-score"> Score : <span id="score">0</span> </p>
+    <div class="grid grid-fade-in"></div>
   </div>
 
   <footer>
@@ -53,7 +38,6 @@
       <button class="footer-btn linkedin" onclick="changePage('https://www.linkedin.com/in/adrian-gabriel-ion-05412a195//')"></button>
     </div>
   </footer>
-
   <script src="app.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
