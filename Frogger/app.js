@@ -17,8 +17,8 @@ const carsRight = document.querySelectorAll(".car-right")
 
 const helpPanelDisplay = document.querySelector('.help-panel')
 
-const rowWidth = 9
-const rowNum = 10
+const rowWidth = 9;
+const rowNum = 10;
 
 let currentIndex = 85
 let currentTime = 20
