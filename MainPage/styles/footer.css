@@ -1,9 +1,9 @@
 footer{
   position:absolute;
-  height: 6vh;
+  height: 7vh;
   left: 0;
   right: 0;
-  bottom: -10vh;
+  bottom: -10%;
   background-color: rgb(141, 134, 134);
   z-index: 1;
   display:flex;
