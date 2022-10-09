@@ -1,96 +1,161 @@
 :root{
-  --button-border-width: 10px;
-  --dark-blue: rgb(19, 63, 195);
-  --duration-rotation: 0.2s;
+  --dark-blue-color: rgb(16, 182, 182);
+  --font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body{
-  height: 114vh;
-  width: 98vw;
-  background-image: url("images/background-memorygame.jpg");
+  background-image: url('images/background.jpg');
   background-size: 100% 100%;
-  background-color: aliceblue;
+  height: 110vh;
+  width: 98vw;
+}
+
+.board{
+  position: absolute;
+  z-index: 4;
+  top: 1vh;
+  left: 1vw;
+  right: 1vw;
+  bottom: 2vh;
+  background-color: rgba(120, 198, 254, 0.8);
+  border-radius: 20px;
+  border-width: 10px;
+  border-style: double;
+  border-color: var(--dark-blue-color);
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  animation: go-down 1.4s ease-in 0s 1;
+  animation-fill-mode: forwards;
+  -webkit-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -ms-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -moz-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+  -o-animation: go-down 1.4s ease-in 0s 1 normal forwards;
+}
+
+.board h2{
+  font-family: var(--font-family);
+  font-weight: 900;
+  color: var(--dark-blue-color);
+}
+
+.grid{
+  display:flex;
+  flex-wrap: wrap;
+  column-gap:5vw;
+  row-gap: 4vh;
+  justify-content: space-between;
+}
+
+.board h2, 
+.grid{
+  opacity:0%;
+  animation: fade-in 1s ease-in-out 1.7s 1;
+  animation-fill-mode: forwards;
+  -webkit-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -ms-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -moz-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+  -o-animation: fade-in 1s ease-in-out 1.7s 1 normal forwards;
+}
+
+h2.title{
+  font-size: 5vh;
+  text-align: center;
+  margin-bottom: 5vh;
+  margin-top: 0vh;
+}
+
+.container{
+  background-color: rgba(199, 225, 225, 0.9);
+  height: 30vh;
+  width: 13vw;
+  border-style: solid;
+  border-color: var(--dark-blue-color);
+  border-width: 5px;
+  border-radius: 16px;
+  transition: border-radius 0.8s, border-color 0.8s, box-shadow 0.8s;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.container:hover{
+  border-radius: 36px;
+  border-color: rgb(9, 183, 247);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.container-image{
+  height: 40%;
+  width: 92%;
+  display: block;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+  border-radius: 10px;
+  object-fit: fill;
+}
+
+.images-overlap{
+  position: relative;
+  top:4%;
+  left:4%;
+  height: 40%;
+  width: 92%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
+.container-image-message{
+  position: absolute;
+  height: 40%;
+  width: 50%;
+  top: -20%;
+  left: -5%;
+  z-index: 2;
+}
+
+.container-image-game-soon{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+
+.container-title{
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark-blue-color);
+  text-align: center;
+}
+
+.coming-soon{
+  background-color: rgb(165, 164, 164) !important;
+  border-color:rgb(106, 104, 104) !important;
+  cursor: default;
+}
+
+.coming-soon .container-title{
+  color:white;
 }
 
 @keyframes fade-in{
-  0%{opacity: 0%;}
-  25%{opacity: 25%;}
-  50%{opacity: 50%;}
-  75%{opacity: 75%;}
-  100%{opacity: 100%;}
+  from{opacity: 0%;}
+  to{opacity: 100%;}
 }
 
-@keyframes fade-out{
-  0%{opacity: 100%;}
-  25%{opacity: 75%;}
-  50%{opacity: 50%;}
-  75%{opacity: 25%;}
-  100%{opacity: 0%;}
+@keyframes go-down{
+  from{bottom:98vh;}
+  to{bottom:2vh;}
 }
 
-.show-card-contain-part1{
-  animation: show-contain var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -webkit-animation: show-contain var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -ms-animation: show-contain var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -moz-animation: show-contain var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -o-animation: show-contain var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-}
-
-.show-card-contain-part2{
-  animation: show-contain-reverse var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -webkit-animation: show-contain-reverse var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -ms-animation: show-contain-reverse var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -moz-animation: show-contain-reverse var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -o-animation: show-contain-reverse var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-}
-
-@keyframes show-contain{
-  0%{transform: scaleX(1);}
-  50%{transform: scaleX(0.5);}
-  100%{transform: scaleX(0);}
-}
-
-@keyframes show-contain-reverse{
-  0%{transform: scaleX(0);}
-  50%{transform: scaleX(0.5);}
-  100%{transform: scaleX(1);}
-}
-
-.turn-card-back-part1{
-  animation: turn-back-part1 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -webkit-animation: turn-back-part1 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -ms-animation: turn-back-part1 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -moz-animation: turn-back-part1 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -o-animation: turn-back-part1 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-}
-
-.turn-card-back-part2{
-  animation: turn-back-part2 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -webkit-animation: turn-back-part2 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -ms-animation: turn-back-part2 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -moz-animation: turn-back-part2 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-  -o-animation: turn-back-part2 var(--duration-rotation) ease-in-out 0s 1 normal forwards;
-}
-
-@keyframes turn-back-part1{
-  0%{transform: scaleX(1);}
-  50%{transform: scaleX(0.5);}
-  100%{transform: scaleX(0);}
-}
-
-@keyframes turn-back-part2{
-  0%{transform: scaleX(0);}
-  50%{transform: scaleX(0.5);}
-  100%{transform: scaleX(1);}
-}
-
-@media only screen and (max-width: 1000px) {
-  .grid{
-    left: 1vw;
-    right: 1vw;
-  }
-
-  .card{
-    width: 15vw;
+@media screen and (max-width: 800px) {
+  .container{
+    width: 22vw;
   }
 }
