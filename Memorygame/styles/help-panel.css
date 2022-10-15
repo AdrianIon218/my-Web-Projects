@@ -1,0 +1,93 @@
+.backdrop{
+  display:block;
+  background-color: rgba(59, 57, 57, 0.7);
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left:0;
+  right:0;
+  z-index:110;
+}
+
+.help-hidden{
+  display: none;
+}
+
+.help-fade-in{
+  animation: help-fade-in-effect 1s ease-in-out 0s 1 normal forwards;
+  -webkit-animation: help-fade-in-effect 1s ease-in-out 0s 1 normal forwards;
+  -ms-animation: help-fade-in-effect 1s ease-in-out 0s 1 normal forwards;
+  -moz-animation: help-fade-in-effect 1s ease-in-out 0s 1 normal forwards;
+  -o-animation: help-fade-in-effect 1s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes help-fade-in-effect {
+  from{opacity: 0%;}
+  to{opacity: 100%;}
+}
+
+.help-fade-out{
+  animation: help-fade-out-effect 1s ease-in-out 0s 1 normal forwards;
+  -webkit-animation: help-fade-out-effect 1s ease-in-out 0s 1 normal forwards;
+  -ms-animation: help-fade-out-effect 1s ease-in-out 0s 1 normal forwards;
+  -moz-animation: help-fade-out-effect 1s ease-in-out 0s 1 normal forwards;
+  -o-animation: help-fade-out-effect 1s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes help-fade-out-effect {
+  from{opacity: 100%;}
+  to{opacity: 0%;}
+}
+
+.backdrop > .help-panel{
+  position: absolute;
+  top:10%;
+  left:15%;
+  right: 15%;
+  bottom:10%;
+  background-color: rgb(85, 162, 162);
+  border: 10px rgb(5, 123, 127) double;
+}
+
+.backdrop > .help-panel > .btn-exit{
+  position: absolute;
+  top:-20px;
+  right:-20px;
+  height: 30px;
+  width: 30px;
+  border: 3px red solid;
+  border-radius: 50%;
+  background-color: lightcoral;
+  color:rgb(154, 21, 21);
+  font-weight: bolder;
+  text-align: center;
+  cursor:pointer;
+  transition: border-width 0.3s , border-radius .4s;
+}
+
+.backdrop > .help-panel > .btn-exit:hover{
+  border-width: 4px;
+  border-radius: 44%;
+}
+
+.backdrop > .help-panel > p{
+  margin-left: 5px;
+  margin-right: 5px;
+  padding:1%;
+  color:rgb(9, 98, 136);
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+}
+
+.backdrop > .help-panel > p:first-child{
+  margin-top: 60px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .backdrop > .help-panel > .btn-exit{
+    height: 45px;
+    width: 45px;
+    font-size: 20px;
+  }
+}

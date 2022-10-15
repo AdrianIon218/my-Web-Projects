@@ -9,11 +9,33 @@
   <link rel="stylesheet" type="text/css" href="styles/menu.css">
   <link rel="stylesheet" type="text/css" href="styles/board.css">
   <link rel="stylesheet" type="text/css" href="styles/footer.css">
+  <link rel="stylesheet" type="text/css" href="styles/help-panel.css">
 </head>
 <body>
+
+  <div id="help-id" class="backdrop help-hidden">
+    <div class="help-panel">
+      <p>
+        The memory game is a common children's game played with a set of cards.
+      </p>
+      <p>
+        The cards have a pictures on one side and each picture appears on two cards.
+      </p> 
+      <p>
+        The game starts with all the cards face down and the player must turn over two cards.
+      </p>
+      <p>
+        If the two cards have the same picture, then they dissapear, otherwise they turn the cards face down again.
+      </p>
+      <p>
+        The player will win win the game when all the cards have been taken.
+      </p>
+    <button class="btn-exit" onclick="callHelpPanel(false)">X</button>
+    </div>
+  </div>
+
   <nav class="menu-up">
-    <div></div>
-    <!--<button class="menu-btn" onclick="showInstruction()">Help ?</button>-->
+    <button class="menu-btn" onclick="callHelpPanel(true)">Help</button>
     <button class="menu-btn" onclick="playAgain()">Restart</button>
     <button class="menu-btn" onclick="changePage('../MainPage/index.html')">Projects</button>
   </nav>

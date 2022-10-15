@@ -54,6 +54,7 @@ const scoreDisplay = document.querySelector('#score');
 const gridDisplay = document.querySelector('.grid');
 const messageDisplay = document.querySelector('.final-message');
 const menuButtons = document.querySelectorAll('.menu-btn');
+const helpPanel = document.getElementById('help-id')
 
 let scoreCounter = 0;
 let cardChosenNames = [];
@@ -220,4 +221,20 @@ function closeMessage(){
     messageDisplay.classList.remove('message-fade-out');
     menuButtons.forEach(btn => btn.classList.remove('menu-btn-no-action'));
   },{'once':true})
+}
+
+function callHelpPanel(toShow){
+  if(toShow === true){
+    helpPanel.classList.remove('help-fade-out');
+    helpPanel.classList.remove('help-hidden');
+    helpPanel.classList.add('help-fade-in');
+  }
+  else{
+    helpPanel.classList.add('help-fade-out')
+    helpPanel.addEventListener('animationend',()=>{
+      helpPanel.classList.add('help-hidden');
+      helpPanel.classList.remove('help-fade-in');
+    },{once:true})
+    helpPanel.classList.add();
+  }
 }
