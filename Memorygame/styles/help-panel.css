@@ -84,10 +84,40 @@
   margin-top: 60px;
 }
 
+.card_box{
+  position: absolute;
+  top: 90%;
+  left: -2%;
+  height: 90px;
+  width: 70px;
+  rotate: -30deg;
+  border: 3px rgb(42, 40, 40) solid;
+  border-radius: 20%;
+}
+
+.card_box_right_bottom{
+  position: absolute;
+  top: 90%;
+  left: 94%;
+  height: 90px;
+  width: 70px;
+  rotate: 30deg;
+  border: 3px rgb(42, 40, 40) solid;
+  border-radius: 20%;
+}
+
 @media only screen and (max-width: 1000px) {
   .backdrop > .help-panel > .btn-exit{
     height: 45px;
     width: 45px;
     font-size: 20px;
+  }
+
+  .card_box{
+    top:94%;
+  }
+
+  .card_box_right_bottom{
+    left: 90%;
   }
 }
