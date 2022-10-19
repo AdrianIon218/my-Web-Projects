@@ -38,7 +38,7 @@
 
 #arrow-right{
   position: absolute;
-  left:60%;
+  left: 60%;
   bottom:37%;
   height: 30%;
   width: 35%;
@@ -74,11 +74,3 @@
   background-repeat: no-repeat;
   object-fit: fill;
 }
-
-
-@media only screen and (max-width: 1000px) {
-  .phone-arrows{
-    display: block;
-  }
-}
-

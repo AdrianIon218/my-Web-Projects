@@ -27,6 +27,12 @@ let timerId
 let isPause = true
 let wasMessageShown = false
 
+
+if ("ontouchstart" in document.documentElement)
+{
+  (document.querySelector(".phone-arrows")).style.setProperty("display","block")
+}
+
 pauseButton.addEventListener(
   'click', () =>{
     if(!pauseButton.classList.contains('unavailable-btn')){
