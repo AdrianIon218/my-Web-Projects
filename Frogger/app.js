@@ -15,7 +15,7 @@ const logsright = document.querySelectorAll(".log-right")
 const carsLeft = document.querySelectorAll('.car-left')
 const carsRight = document.querySelectorAll(".car-right")
 
-const helpPanelDisplay = document.querySelector('.help-panel')
+const helpPanelDisplay = document.querySelector('.backdrop')
 
 const rowWidth = 9;
 const rowNum = 10;
