@@ -3,7 +3,7 @@ const title = document.querySelector('.instruction');
 const possibleChoices = document.querySelectorAll('.card');
 const panel = document.querySelector('.panel');
 const circle = document.querySelector('.circle');
-const help = document.querySelector('.help-panel');
+const help = document.querySelector('.backdrop');
 
 let userChoice;
 let computerChoice = '';
