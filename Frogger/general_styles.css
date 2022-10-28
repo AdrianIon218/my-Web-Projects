@@ -68,6 +68,10 @@ body{
   z-index: 50;
 }
 
+.sidebar button{
+  margin-bottom: 5px;
+}
+
 .start-pause-restart-button{
   border: 5px double var(--green-border);
   color: var(--green-border);
