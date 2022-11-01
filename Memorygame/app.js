@@ -1,4 +1,4 @@
-// Model section
+//---------- Model section ----------------
 const cardArray = [
   {
     name: 'fries',

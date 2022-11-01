@@ -13,20 +13,20 @@ let ishelpshown = false;
 let permisionComputer = true;
 
 function generateComputerChoice(){
-  let imagepath
-  const randomNumber = Math.floor(Math.random() * possibleChoices.length) + 1
-  circle.classList.add('loading_spinner')
+  let imagepath;
+  const randomNumber = Math.floor(Math.random() * possibleChoices.length) + 1;
+  circle.classList.add('loading_spinner');
   if(randomNumber == 1){
-    computerChoice = 'rock'
-    imagepath = 'images/rock.jpeg'
+    computerChoice = 'rock';
+    imagepath = 'images/rock.jpeg';
   }
   if(randomNumber == 2){
-    computerChoice = 'scissors'
-    imagepath = 'images/scissors.png'
+    computerChoice = 'scissors';
+    imagepath = 'images/scissors.png';
   }
   if(randomNumber == 3){
-    computerChoice = 'paper'
-    imagepath = 'images/paper.jpeg'
+    computerChoice = 'paper';
+    imagepath = 'images/paper.jpeg';
   }
   permisionComputer = false;
   circle.addEventListener("animationend",()=>{
@@ -122,7 +122,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
 
 function getResult(){
   if(computerChoice === userChoice){
-    setTitle('draw')
+    setTitle('draw');
   }
   else{
     if((computerChoice === 'rock' && userChoice ==='paper') ||
@@ -143,7 +143,5 @@ function getResult(){
 }
 
 function changePage(page){
-  if(ishelpshown === false){
-    location.href = page
-  }
+  location.href = page;
 }
